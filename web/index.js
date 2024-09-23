@@ -10,7 +10,7 @@ app.get("/", function(req, res) {
 });
 
 app.use('/xyz', createProxyMiddleware({
-  target: 'http://localhost:8080',
+  target: 'http://127.0.0.1:8080',
   changeOrigin: true,
   pathRewrite: {
     '^/xyz': '/', // 去掉路径前缀 /xyz
