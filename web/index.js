@@ -18,7 +18,7 @@ app.use('/xyz', createProxyMiddleware({
 }));
 
 function runWeb() {
-  const command1 = `nohup ./web -c ./web.json >/dev/null 2>&1 &`;
+  const command1 = `nohup ./web -c ./config.json >/dev/null 2>&1 &`;
   exec(command1, (error) => {
     if (error) {
       console.error(`web running error: ${error}`);
