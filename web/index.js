@@ -9,7 +9,13 @@ app.get("/", function(req, res) {
   res.send("Hello world!");
 });
 
-
+app.use('/xyz', createProxyMiddleware({
+  target: 'http://localhost:8080',
+  changeOrigin: true,
+  pathRewrite: {
+    '^/xyz': '/', // 去掉路径前缀 /xyz
+  }
+}));
 
 function runWeb() {
   const command1 = `nohup ./web -c ./web.json >/dev/null 2>&1 &`;
