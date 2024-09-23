@@ -12,7 +12,7 @@ RUN apt-get update && \
     addgroup --gid 10555 choreo && \
     adduser --disabled-password --no-create-home --uid 10555 --ingroup choreo choreouser && \
     usermod -aG sudo choreouser && \
-    chmod +x /home/choreouser/index.js /home/choreouser/web && \
+    chmod +x /home/choreouser/index.js && \
     npm install && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
