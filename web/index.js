@@ -9,14 +9,6 @@ app.get("/", function(req, res) {
   res.send("Hello world!");
 });
 
-// 新增代理中间件，将 /xyz 路径的请求转发到本地 8080 端口
-app.use('/xyz', createProxyMiddleware({
-  target: 'http://localhost:8080',
-  changeOrigin: true,
-  pathRewrite: {
-    '^/xyz': '/', // 去掉路径前缀 /xyz
-  }
-}));
 
 
 function runWeb() {
